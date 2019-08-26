@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Cards</title>
+        
+        <link rel="stylesheet" href="node_modules/deck-of-cards/example/example.css">
+        <style type="text/css">
+            .placeholder {
+                border-color: white;
+                border-style: dashed;
+                border-width: 1.5px;
+                width: 3.875rem;
+                height: 18%;
+                position: relative;
+                display: inline-block;
+                margin: 2px 3px;
+                padding: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="node_modules/deck-of-cards/dist/deck.min.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <div id="placeholders" style="
+        width: 21rem;
+        height: 80%;
+        top: 5%;
+        left: 5%;
+        position: absolute;
+    ">
+        </div>
+        <div id="container" style="
+        position: fixed;
+        top: calc(76% + 1.5rem);
+        left: 10%;
+        -webkit-transform: translate3d(-10%, -76%, 0);
+        -moz-transform: translate3d(-10%, -76%, 0);
+        -o-transform: translate3d(-10%, -76%, 0);
+        -ms-transform: translate3d(-10%, -76%, 0);
+        transform: translate3d(-10%, -76%, 0);""
+        ></div>
+
+        <script>
+            var $container = document.getElementById('container');
+            //create placeholders5x5
+            let phindex = 1;
+            for (let row = 0; row < 5; row++) {
+                for (let col = 0; col < 5; col++) {
+                    $("#placeholders").append('<div id="_' + phindex + '" class="placeholder"></div>');
+                    phindex++;
+                    ;
+                }
+            }
+            // create Deck
+            var deck = Deck();
+
+            // add to DOM
+            deck.mount($container);
+
+            // deck.cards.forEach(function (card, i) {
+            //     card.setSide(Math.random() < 0.5 ? 'front' : 'back');
+
+            //     // explode
+            //     card.animateTo({
+            //         delay: 1000 + i * 2, // wait 1 second + i * 2 ms
+            //         duration: 500,
+            //         ease: 'quartOut',
+
+            //         x: Math.random() * window.innerWidth - window.innerWidth / 2,
+            //         y: Math.random() * window.innerHeight - window.innerHeight / 2
+            //     });
+            // });
+        </script>
+    </body>
+</html>
