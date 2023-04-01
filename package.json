@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "deck-of-cards": "^0.1.8",
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
